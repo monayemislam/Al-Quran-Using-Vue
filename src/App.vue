@@ -1,12 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <HeaderView />
+  <div class="p-5"><h2>Hello</h2></div>
+  <FooterView />
 </template>
 
 <script>
+import HeaderView from "@/views/global/HeaderView.vue";
+import FooterView from "@/views/global/FooterView.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: { HeaderView, FooterView },
 };
 </script>
 
@@ -17,6 +21,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
