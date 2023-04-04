@@ -14,15 +14,21 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link to="/full-quran-asad" class="nav-link"
+              >Full Quran Asad</router-link
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <router-link class="nav-link" to="/full-quran-uthmani"
+              >Full Quran Uthmani</router-link
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <router-link class="nav-link" to="/full-quran-audio"
+              >Full Quran Audio</router-link
+            >
           </li>
         </ul>
       </div>
