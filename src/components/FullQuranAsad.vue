@@ -3,12 +3,15 @@
     <div class="row g-4">
       <div
         class="col-sm-4"
-        v-for="result in getAsadQuranResult.data.surahs"
+        v-for="(result,index) in getAsadQuranResult.data.surahs"
         :key="result"
       >
         <div class="card">
-          <div class="card-header lead">
-            {{ `${result.englishName} ( ${result.name} )` }}
+          <div class="card-header">
+            <div class="d-flex justify-content-between">
+              <div>{{ `${result.englishName} ( ${result.name} )` }}</div>
+              <button @click="removeSurah(index)">X</button>
+            </div>
           </div>
           <div class="card-body">
             <table class="table">
@@ -57,6 +60,9 @@ export default {
           console.error(error);
         });
     },
+    removeSurah: function (index) {
+      this.getAsadQuranResult.data.surahs.splice(index,1);
+    }
   },
   mounted() {
     this.getAsadQuran();
