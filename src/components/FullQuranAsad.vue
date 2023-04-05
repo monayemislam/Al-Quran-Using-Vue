@@ -1,8 +1,40 @@
 <template>
-  <h2>Full Quran Asad</h2>
-
-  <div v-if="getAsadQuranResult">
-    {{ getAsadQuranResult }}
+  <div class="container pt-4" v-if="getAsadQuranResult">
+    <div class="row g-4">
+      <div
+        class="col-sm-4"
+        v-for="result in getAsadQuranResult.data.surahs"
+        :key="result"
+      >
+        <div class="card">
+          <div class="card-header lead">
+            {{ `${result.englishName} ( ${result.name} )` }}
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="col-5">Meaning of Name</td>
+                  <td>{{ result.englishNameTranslation }}</td>
+                </tr>
+                <tr>
+                  <td class="col-5">Revelation Type</td>
+                  <td>{{ result.revelationType }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer">
+            <div class="d-flex justify-content-between">
+              <div>Surah Number: {{ result.number }}</div>
+              <div>
+                <button class="btn btn-sm btn-outline-dark">Read</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
