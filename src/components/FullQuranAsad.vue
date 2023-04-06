@@ -3,7 +3,7 @@
     <div class="row g-4">
       <div
         class="col-sm-4"
-        v-for="(result,index) in getAsadQuranResult.data.surahs"
+        v-for="(result, index) in getAsadQuranResult.data.surahs"
         :key="result"
       >
         <div class="card">
@@ -31,7 +31,7 @@
             <div class="d-flex justify-content-between">
               <div>Surah Number: {{ result.number }}</div>
               <div>
-                <button class="btn btn-sm btn-outline-dark">Read</button>
+                <router-link :to="'/surah/' + result.number">Read</router-link>
               </div>
             </div>
           </div>
@@ -61,8 +61,8 @@ export default {
         });
     },
     removeSurah: function (index) {
-      this.getAsadQuranResult.data.surahs.splice(index,1);
-    }
+      this.getAsadQuranResult.data.surahs.splice(index, 1);
+    },
   },
   mounted() {
     this.getAsadQuran();
